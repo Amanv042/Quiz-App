@@ -1,0 +1,94 @@
+
+.container {
+  max-width: 70%;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.credit-area > div {
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  margin-bottom: 0.5rem;
+}
+
+.credit-area > div span {
+  font-style: italic;
+}
+
+.heart{
+  color: red;
+}
+
+.btn a {
+  display: flex;
+  color: white;
+  background: #35bd3a;
+  height: 4.5rem;
+  width: 250px;
+  margin-top: 3rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  font-size: 2em;
+  box-shadow: 5px 5px 0 #028006;
+  align-items: center;
+  justify-content: center;
+  transition: all 250ms ease-in;
+}
+
+.btn a:hover {
+  background: transparent;
+  border: 1px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+  box-shadow: 5px 5px 0 rgb(170, 170, 170);
+}
+
+.btn a span {
+  display: block;
+  width: 18px;
+  height: 18px;
+  margin-left: 8px;
+  border-top: 4px solid white;
+  border-right: 4px solid white;
+  rotate: 40deg;
+  animation: animate 1.5s ease-in-out infinite;
+  position: relative;
+  transition: opacity 250ms ease-in-out;
+}
+.btn a:hover span {
+  border-top: 4px solid rgb(255, 255, 255);
+  border-right: 4px solid rgb(255, 255, 255);
+}
+.btn a span:nth-child(1) {
+  animation-delay: var(--i);
+}
+.btn a span:nth-child(2) {
+  animation-delay: var(--i);
+}
+.btn a span:nth-child(3) {
+  animation-delay: var(--i);
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+
+.previous-score{
+  font-size: 1.1em;
+  color: white;
+}
