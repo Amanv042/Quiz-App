@@ -6,16 +6,15 @@
   box-sizing: border-box;
 }
 
-body{
-  /* background: rgba(212, 214, 159, 0.55); */
-  /* background: rgba(254, 255, 218, 0.55); */
-  background: radial-gradient(50.53% 50.53% at 50.23% 49.47%, #414d59 0%, #1d2631 100%);
+body {
+  background: #D4D69F8C;
 }
 
 
 html {
   font-family: 'Popppins', sans-serif;
 }
+
 img {
   width: 100%;
 }
@@ -29,4 +28,3 @@ a {
 .text-center {
   text-align: center;
 }
-

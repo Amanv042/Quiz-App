@@ -1,15 +1,18 @@
 'use strict'
 
-const muteBtn = document.querySelector('.material-symbols-outlined')
+const musicStateOn = document.querySelector('.music-state-on')
+const musicStateOff = document.querySelector('.music-state-off')
 const questionNumber = document.querySelector('.que-number .number')
 const showQuestion = document.querySelector('.question')
 const showTime = document.querySelector('.timer .sec')
 const showOptions = document.querySelectorAll('.options .option')
+const showOption = document.querySelector('.options')
 const removeClassEle = document.querySelectorAll('.options .option.active')
 const nextBtn = document.querySelector('.next-key button')
 const activeOpt = document.querySelector('.active')
 const body = document.body
 
+console.log(showOption)
 // variables for options selection
 const opt_1 = document.getElementById('ans1')
 const opt_2 = document.getElementById('ans2')
@@ -20,12 +23,13 @@ let queCounter = 0
 let time = 30
 let counter, score
 
-muteBtn.addEventListener('click', () => {
-  if (muteBtn.innerText === 'volume_up') {
-    muteBtn.innerText = 'volume_off'
-  } else {
-    muteBtn.innerText = 'volume_up'
-  }
+musicStateOn.addEventListener('click', () => {
+  musicStateOn.classList.remove('music--state-on')
+  musicStateOff.classList.add('music--state-off')
+})
+musicStateOff.addEventListener('click', () => {
+  musicStateOn.classList.add('music--state-on')
+  musicStateOff.classList.remove('music--state-off')
 })
 
 function loadQuestion() {
@@ -77,6 +81,12 @@ function removeClass() {
     element.classList.remove('correct')
     element.classList.remove('wrong')
     body.classList.remove('less-time')
+
+
+    // to add pointer event none
+    showOptions.forEach((ll) => {
+      ll.classList.remove('selected')
+    })
   })
 }
 
@@ -136,6 +146,7 @@ showOptions.forEach((opt) => {
   opt.addEventListener('click', () => {
     showOptions.forEach((opt) => {
       opt.classList.remove('active')
+      opt.classList.add('selected')
     })
     opt.classList.add('active')
     checkOpt()
@@ -144,19 +155,19 @@ showOptions.forEach((opt) => {
 
 // to show and all time related funtionality
 function starttimer(time) {
-  counter = setInterval(timer, 1000)
-  function timer() {
-    showTime.innerText = `${time}s`
-    time--
-    if (time < 10) {
-      showTime.innerText = `0${time}s`
-      bgBreathEffectTime()
-    }
-    if (time < 0) {
-      showTime.innerText = `00s`
-      incrementQue()
-    }
-  }
+  // counter = setInterval(timer, 1000)
+  // function timer() {
+  //   showTime.innerText = `${time}s`
+  //   time--
+  //   if (time < 10) {
+  //     showTime.innerText = `0${time}s`
+  //     bgBreathEffectTime()
+  //   }
+  //   if (time < 0) {
+  //     showTime.innerText = `00s`
+  //     incrementQue()
+  //   }
+  // }
 }
 
 function bgBreathEffectTime() {

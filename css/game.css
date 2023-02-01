@@ -1,5 +1,5 @@
 .container {
-    max-width: 60%;
+    max-width: 1030px;
     margin: 0 auto;
     padding: 5rem;
     min-height: 100vh;
@@ -33,10 +33,16 @@ header {
     width: 10rem;
 }
 
-.material-symbols-outlined {
-    color: rgb(255, 255, 255);
-    font-size: 2.2em;
-    cursor: pointer;
+.music-state-on,
+.music-state-off{
+    display: none;
+}
+
+.music .music--state-on{
+    display: block;
+}
+.music .music--state-off{
+    display: block;
 }
 
 .que-number,
@@ -127,6 +133,7 @@ header {
 }
 
 .options {
+    /* min-height: 475px; */
     margin-top: 1rem;
     padding: 2rem;
     background: rgb(255, 255, 255, 0.5);
@@ -136,6 +143,11 @@ header {
     position: relative;
     z-index: 1;
 }
+
+.options .selected{
+    pointer-events: none;
+}
+
 
 .options::after {
     content: '';
@@ -197,7 +209,7 @@ footer {
 
 footer p {
     text-align: center;
-    color: white;
+    color: #333;
 }
 
 @media (width < 900px) {
